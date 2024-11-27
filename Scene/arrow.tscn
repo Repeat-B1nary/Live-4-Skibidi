@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbm2r2u6ae7mj"]
+
+[ext_resource type="Script" path="res://Script/arrow.gd" id="1_v1ful"]
+[ext_resource type="Texture2D" uid="uid://cx82nk0uxflac" path="res://Art/bullets/Arrow.png" id="2_tsm21"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cnorh"]
+size = Vector2(162, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_alcag"]
+size = Vector2(86.6667, 20)
+
+[node name="arrow" type="Area2D"]
+scale = Vector2(0.15, 0.15)
+script = ExtResource("1_v1ful")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(40, 4.99999)
+scale = Vector2(0.214844, 0.126953)
+texture = ExtResource("2_tsm21")
+hframes = 5
+vframes = 5
+frame = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.19209e-07, 0)
+shape = SubResource("RectangleShape2D_cnorh")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(1, -0.499999)
+scale = Vector2(1.1, 1.25)
+
+[node name="Contact" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Contact"]
+position = Vector2(-30, 0)
+shape = SubResource("RectangleShape2D_alcag")
+
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]
+[connection signal="body_entered" from="Contact" to="." method="_on_contact_body_entered"]

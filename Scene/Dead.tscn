@@ -1,0 +1,95 @@
+[gd_scene load_steps=11 format=3 uid="uid://b86aux3ngma0j"]
+
+[ext_resource type="Script" path="res://Script/Dead.gd" id="1_jqelv"]
+[ext_resource type="Texture2D" uid="uid://cbtlrymahv0qf" path="res://Art/RestartOFF.png" id="2_03mo2"]
+[ext_resource type="Texture2D" uid="uid://cjw63to7ulatk" path="res://Art/ExitON (1).png" id="3_vpegt"]
+[ext_resource type="Texture2D" uid="uid://dt2wxue36hf2f" path="res://Art/Forest Path Layer6.png" id="4_a4bjv"]
+[ext_resource type="Texture2D" uid="uid://cfp613x4lldt7" path="res://Art/Forest Path Layer5.png" id="5_cerom"]
+[ext_resource type="Texture2D" uid="uid://bogr6jhuw7dk3" path="res://Art/Forest Path Layer4.png" id="6_707y0"]
+[ext_resource type="Texture2D" uid="uid://vtujkaonyb2u" path="res://Art/Forest Path Layer3.png" id="7_mptij"]
+[ext_resource type="Texture2D" uid="uid://du0ti54aita7a" path="res://Art/Forest Path Layer2.png" id="8_f2vnc"]
+[ext_resource type="Texture2D" uid="uid://ckkk6x3wn7akt" path="res://Art/Forest Path Layer1.png" id="9_ynbw7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1wnjq"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="DeathScreen" type="Node2D"]
+script = ExtResource("1_jqelv")
+
+[node name="RePlay" type="TextureButton" parent="."]
+offset_left = 450.0
+offset_top = 320.0
+offset_right = 762.0
+offset_bottom = 632.0
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("2_03mo2")
+
+[node name="Run_Away" type="TextureButton" parent="."]
+offset_left = 458.0
+offset_top = 461.0
+offset_right = 672.0
+offset_bottom = 669.0
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("3_vpegt")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D6" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(576, 324)
+scale = Vector2(5.76, 5.0625)
+texture = ExtResource("4_a4bjv")
+
+[node name="Sprite2D5" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(576, 324)
+scale = Vector2(5.76, 5.063)
+texture = ExtResource("5_cerom")
+
+[node name="Sprite2D4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(576, 324)
+scale = Vector2(5.76, 5.063)
+texture = ExtResource("6_707y0")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(576, 324)
+scale = Vector2(5.76, 5.063)
+texture = ExtResource("7_mptij")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(576, 324)
+scale = Vector2(5.76, 5.063)
+texture = ExtResource("8_f2vnc")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(576, 324)
+scale = Vector2(5.76, 5.063)
+texture = ExtResource("9_ynbw7")
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 212.0
+offset_bottom = 126.0
+scale = Vector2(5.5, 5.063)
+color = Color(0.568627, 0.180392, 0, 0.596078)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 62.0
+offset_top = 38.0
+offset_right = 1040.0
+offset_bottom = 190.0
+theme_override_colors/font_color = Color(0, 0.360784, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.67451)
+theme_override_colors/font_outline_color = Color(0, 0.545098, 0, 1)
+theme_override_constants/shadow_offset_x = 15
+theme_override_constants/shadow_offset_y = 15
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 10
+theme_override_constants/line_spacing = 15
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_1wnjq")
+text = "You lost little gronk"
+
+[connection signal="pressed" from="RePlay" to="." method="_on_re_play_pressed"]
+[connection signal="pressed" from="Run_Away" to="." method="_on_run_away_pressed"]

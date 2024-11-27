@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ck3fjnwy4pkim"]
+
+[ext_resource type="Script" path="res://Script/Goblin_ears.gd" id="1_kedjf"]
+[ext_resource type="Texture2D" uid="uid://6pa4qtm1ql3m" path="res://Art/Enemy/Orc1/Transperent/Icon3.png" id="2_7j6t7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_17n4i"]
+radius = 5.0
+
+[node name="Goblin_ears" type="Area2D"]
+script = ExtResource("1_kedjf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_7j6t7")
+
+[node name="CollectionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectionArea"]
+shape = SubResource("CircleShape2D_17n4i")
+
+[connection signal="body_entered" from="CollectionArea" to="." method="_on_collection_area_body_entered"]

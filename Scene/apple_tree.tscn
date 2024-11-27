@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://d24ironr5qh0e"]
+
+[ext_resource type="Texture2D" uid="uid://5wirlp4gnaek" path="res://Art/survivalgame-appletree.png" id="1_0g7c2"]
+[ext_resource type="Script" path="res://Script/apple_tree.gd" id="1_wawh8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6586"]
+atlas = ExtResource("1_0g7c2")
+region = Rect2(40, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qy05"]
+atlas = ExtResource("1_0g7c2")
+region = Rect2(80, 0, 40, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eblpd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6586")
+}],
+"loop": true,
+"name": &"apple",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qy05")
+}],
+"loop": true,
+"name": &"no_apples",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qmgkn"]
+radius = 42.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vp0c5"]
+size = Vector2(13, 9)
+
+[node name="AppleTree" type="Node2D"]
+script = ExtResource("1_wawh8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_eblpd")
+animation = &"apple"
+autoplay = "apple"
+frame_progress = 0.609433
+
+[node name="pickable_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pickable_area"]
+shape = SubResource("CircleShape2D_qmgkn")
+
+[node name="growth_timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_vp0c5")
+
+[connection signal="body_entered" from="pickable_area" to="." method="_on_pickable_area_body_entered"]
+[connection signal="body_exited" from="pickable_area" to="." method="_on_pickable_area_body_exited"]
+[connection signal="timeout" from="growth_timer" to="." method="_on_growth_timer_timeout"]

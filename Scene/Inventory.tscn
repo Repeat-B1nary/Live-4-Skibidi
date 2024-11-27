@@ -1,0 +1,412 @@
+[gd_scene load_steps=4 format=3 uid="uid://bp74guup2kmpq"]
+
+[ext_resource type="Script" path="res://Script/Inventory.gd" id="1_m5rck"]
+[ext_resource type="Texture2D" uid="uid://s32iqxeoe2wb" path="res://Art/inventory-background.png" id="2_362pk"]
+[ext_resource type="Texture2D" uid="uid://by6dqhd7xyc1r" path="res://Art/inventory-slot (1).png" id="2_tpa3n"]
+
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+script = ExtResource("1_m5rck")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 136.0
+offset_bottom = 55.0
+texture = ExtResource("2_tpa3n")
+patch_margin_left = 15
+patch_margin_top = 15
+patch_margin_right = 15
+patch_margin_bottom = 15
+
+[node name="InventoryGrid" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 12.0
+offset_top = -14.0
+offset_right = 111.0
+offset_bottom = 26.0
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+columns = 5
+
+[node name="Slot0" type="TextureRect" parent="InventoryGrid"]
+layout_mode = 2
+texture = ExtResource("2_362pk")
+
+[node name="ItemTexture" type="TextureRect" parent="InventoryGrid/Slot0"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 15.0
+offset_bottom = 15.0
+expand_mode = 4
+stretch_mode = 5
+
+[node name="ItemCount" type="Label" parent="InventoryGrid/Slot0"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 25.0
+offset_bottom = 53.0
+scale = Vector2(0.5, 0.2)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "j"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot1" type="TextureRect" parent="InventoryGrid"]
+layout_mode = 2
+texture = ExtResource("2_362pk")
+
+[node name="ItemTexture" type="TextureRect" parent="InventoryGrid/Slot1"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 15.0
+offset_bottom = 15.0
+expand_mode = 4
+stretch_mode = 5
+
+[node name="ItemCount" type="Label" parent="InventoryGrid/Slot1"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 25.0
+offset_bottom = 53.0
+scale = Vector2(0.5, 0.2)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "j"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot2" type="TextureRect" parent="InventoryGrid"]
+layout_mode = 2
+texture = ExtResource("2_362pk")
+
+[node name="ItemTexture" type="TextureRect" parent="InventoryGrid/Slot2"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 15.0
+offset_bottom = 15.0
+expand_mode = 4
+stretch_mode = 5
+
+[node name="ItemCount" type="Label" parent="InventoryGrid/Slot2"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 25.0
+offset_bottom = 53.0
+scale = Vector2(0.5, 0.2)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "j"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot3" type="TextureRect" parent="InventoryGrid"]
+layout_mode = 2
+texture = ExtResource("2_362pk")
+
+[node name="ItemTexture" type="TextureRect" parent="InventoryGrid/Slot3"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 15.0
+offset_bottom = 15.0
+expand_mode = 4
+stretch_mode = 5
+
+[node name="ItemCount" type="Label" parent="InventoryGrid/Slot3"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 25.0
+offset_bottom = 53.0
+scale = Vector2(0.5, 0.2)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "j"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot4" type="TextureRect" parent="InventoryGrid"]
+layout_mode = 2
+texture = ExtResource("2_362pk")
+
+[node name="ItemTexture" type="TextureRect" parent="InventoryGrid/Slot4"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 15.0
+offset_bottom = 15.0
+expand_mode = 4
+stretch_mode = 5
+
+[node name="ItemCount" type="Label" parent="InventoryGrid/Slot4"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 25.0
+offset_bottom = 53.0
+scale = Vector2(0.5, 0.2)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "j"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot5" type="TextureRect" parent="InventoryGrid"]
+layout_mode = 2
+texture = ExtResource("2_362pk")
+
+[node name="ItemTexture" type="TextureRect" parent="InventoryGrid/Slot5"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 15.0
+offset_bottom = 15.0
+expand_mode = 4
+stretch_mode = 5
+
+[node name="ItemCount" type="Label" parent="InventoryGrid/Slot5"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 25.0
+offset_bottom = 53.0
+scale = Vector2(0.5, 0.2)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "j"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot6" type="TextureRect" parent="InventoryGrid"]
+layout_mode = 2
+texture = ExtResource("2_362pk")
+
+[node name="ItemTexture" type="TextureRect" parent="InventoryGrid/Slot6"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 15.0
+offset_bottom = 15.0
+expand_mode = 4
+stretch_mode = 5
+
+[node name="ItemCount" type="Label" parent="InventoryGrid/Slot6"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 25.0
+offset_bottom = 53.0
+scale = Vector2(0.5, 0.2)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "j"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot7" type="TextureRect" parent="InventoryGrid"]
+layout_mode = 2
+texture = ExtResource("2_362pk")
+
+[node name="ItemTexture" type="TextureRect" parent="InventoryGrid/Slot7"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 15.0
+offset_bottom = 15.0
+expand_mode = 4
+stretch_mode = 5
+
+[node name="ItemCount" type="Label" parent="InventoryGrid/Slot7"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 25.0
+offset_bottom = 53.0
+scale = Vector2(0.5, 0.2)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "j"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot8" type="TextureRect" parent="InventoryGrid"]
+layout_mode = 2
+texture = ExtResource("2_362pk")
+
+[node name="ItemTexture" type="TextureRect" parent="InventoryGrid/Slot8"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 15.0
+offset_bottom = 15.0
+expand_mode = 4
+stretch_mode = 5
+
+[node name="ItemCount" type="Label" parent="InventoryGrid/Slot8"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 25.0
+offset_bottom = 53.0
+scale = Vector2(0.5, 0.2)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "j"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot9" type="TextureRect" parent="InventoryGrid"]
+layout_mode = 2
+texture = ExtResource("2_362pk")
+
+[node name="ItemTexture" type="TextureRect" parent="InventoryGrid/Slot9"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 15.0
+offset_bottom = 15.0
+expand_mode = 4
+stretch_mode = 5
+
+[node name="ItemCount" type="Label" parent="InventoryGrid/Slot9"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 25.0
+offset_bottom = 53.0
+scale = Vector2(0.5, 0.2)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "j"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 58.0
+offset_right = 241.0
+offset_bottom = 145.0
+texture = ExtResource("2_362pk")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 62.0
+offset_right = 44.0
+offset_bottom = 85.0
+scale = Vector2(0.5, 0.5)
+text = "Movement:"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 50.5
+offset_top = 62.0
+offset_right = 134.5
+offset_bottom = 85.0
+scale = Vector2(0.5, 0.5)
+text = "W,A, S, D"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 3.5
+offset_top = 78.0
+offset_right = 87.5
+offset_bottom = 101.0
+scale = Vector2(0.5, 0.5)
+text = "Attack Mode:"
+
+[node name="Label9" type="Label" parent="."]
+layout_mode = 0
+offset_left = 3.5
+offset_top = 90.5
+offset_right = 105.5
+offset_bottom = 113.5
+scale = Vector2(0.5, 0.5)
+text = "To use items 
+in the inventory: i"
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 78.0
+offset_right = 96.0
+offset_bottom = 101.0
+scale = Vector2(0.5, 0.5)
+text = "	Q
+"
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 63.0
+offset_right = 198.0
+offset_bottom = 86.0
+scale = Vector2(0.5, 0.5)
+text = "Inventory:"
+
+[node name="Label6" type="Label" parent="."]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 63.0
+offset_right = 244.0
+offset_bottom = 86.0
+scale = Vector2(0.5, 0.5)
+text = "I
+"
+
+[node name="Label7" type="Label" parent="."]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 80.0
+offset_right = 168.0
+offset_bottom = 103.0
+scale = Vector2(0.5, 0.5)
+text = "Shoot: 
+"
+
+[node name="Label8" type="Label" parent="."]
+layout_mode = 0
+offset_left = 147.0
+offset_top = 80.0
+offset_right = 265.0
+offset_bottom = 103.0
+scale = Vector2(0.5, 0.5)
+text = "Left Mouse"
+
+[node name="FeedbackLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 53.0
+offset_right = 228.0
+offset_bottom = 76.0
+theme_override_colors/font_color = Color(0.827451, 0, 0, 1)
+text = "No enough item count"
